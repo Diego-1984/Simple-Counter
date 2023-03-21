@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function Clock() {
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
+  useState(() => {
     const interval = setInterval(() => {
       setCount(count => (count + 1) % 10);
     }, 1000000);
