@@ -25,6 +25,7 @@ const Home = () => {
 			
 			<p>
 				<img src={rigoImage} />
+				
 			</p>
 
 		</div>

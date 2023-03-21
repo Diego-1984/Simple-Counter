@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-const Clock =()=>  {
-  const [seconds, setSeconds] = useState(0);
+function Clock() {
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (seconds < 9) {
-        setSeconds(seconds +1);
-      } else {
-        setSeconds(0);
-      }
+    const interval = setInterval(() => {
+      setCount(count => (count + 1) % 10);
     }, 1000);
 
-    return () => clearInterval(intervalId);
-  }, [seconds]);
+    return () => clearInterval(interval);
+  }, []);
 
-  return (
-    <div>
-      <h1>{seconds}</h1>
-    </div>
-  );
+  return <div>{count}</div>;
 }
 
 export default Clock;
+
+
+
+
